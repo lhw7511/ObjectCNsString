@@ -38,6 +38,14 @@ int main(int argc, const char * argv[]) {
         
         result = [[str substringWithRange:NSMakeRange(8, 3)]lowercaseString];
         NSLog(@"result : %@",result);
+        
+        //바로 값할당 불가 하지만 값 다이렉트로 재할당 가능
+        NSMutableString *mstr = [NSMutableString stringWithString:str];
+        [mstr appendString:@" and NSMutableString"];
+        NSLog(@"mstr : %@",mstr);
+        
+        [mstr insertString:@"Mutable" atIndex:10];
+        NSLog(@"mstr : %@",mstr);
     }
     return 0;
 }
