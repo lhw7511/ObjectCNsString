@@ -66,6 +66,17 @@ int main(int argc, const char * argv[]) {
         for (NSString *strTemp in mmonth) {
             NSLog(@"month : %@",strTemp);
         }
+        
+        //딕셔너리
+        //값 할당시 밸류 키 순서대로
+        NSDictionary *dic = [[NSDictionary alloc]initWithObjectsAndKeys:@"이현욱",@"이름",@"27",@"나이",nil];
+        NSLog(@"이름 %@",[dic objectForKey:@"이름"]);
+        NSLog(@"나이 %@",[dic objectForKey:@"나이"]);
+        
+        NSMutableDictionary *mdic =  [NSMutableDictionary dictionaryWithDictionary:dic];
+        [mdic setObject:@"한국" forKey:@"국적"];
+        NSLog(@"나이 %@",[mdic objectForKey:@"나이"]);
+        NSLog(@"국적 %@",[mdic objectForKey:@"국적"]);
     }
     return 0;
 }
