@@ -35,7 +35,6 @@ int main(int argc, const char * argv[]) {
         //index 8부터 3길이까지
         result = [str substringWithRange:NSMakeRange(8, 3)];
         NSLog(@"result : %@",result);
-        
         result = [[str substringWithRange:NSMakeRange(8, 3)]lowercaseString];
         NSLog(@"result : %@",result);
         
@@ -46,6 +45,27 @@ int main(int argc, const char * argv[]) {
         
         [mstr insertString:@"Mutable" atIndex:10];
         NSLog(@"mstr : %@",mstr);
+        
+        
+        
+        //배열
+        NSArray *month = [[NSArray alloc]initWithObjects:@"1월",@"2월",@"3월",@"4월",@"5월",@"6월",@"7월",@"8월",@"9월",@"10월", nil];
+        
+//        for(int i = 0; i<month.count; i++){
+//            //NSLog(@"month : %@",month[i]);
+//            NSLog(@"month : %@",[month objectAtIndex:i]);
+//        }
+        for (NSString *strTemp in month) {
+            NSLog(@"month : %@",strTemp);
+        }
+        
+        //가변 배열 추가삭제가능 연산은더느림
+        NSMutableArray *mmonth = [NSMutableArray arrayWithArray:month];
+        [mmonth addObject:@"11월"];
+        [mmonth addObject:@"12월"];
+        for (NSString *strTemp in mmonth) {
+            NSLog(@"month : %@",strTemp);
+        }
     }
     return 0;
 }
